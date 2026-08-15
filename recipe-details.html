@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Recipe Details | Recipe Finder</title>
+
+    <link rel="stylesheet"
+          href="style2.css">
+
+</head>
+
+
+<body>
+
+
+    <main>
+
+
+        <!-- =================================================
+             RECIPE HERO
+        ================================================== -->
+
+        <section class="recipe-detail-hero">
+
+
+            <div class="recipe-image-container">
+
+                <img id="detailImage"
+                 src=""
+                alt="Recipe image">
+
+            </div>
+
+
+
+            <div class="recipe-main-info">
+
+
+                <span class="recipe-category" id="detailCategory">
+                    🇮🇳 INDIAN CUISINE
+                </span>
+
+
+                <h1 id="detailName">
+                </h1>
+
+
+                <p class="recipe-description" id="detailDescription">
+
+                
+
+                </p>
+
+
+
+                <!-- RATING -->
+
+                <div class="rating">
+
+                    <span>
+                        ⭐⭐⭐⭐⭐
+                    </span>
+
+                    <strong id="detailRating"></strong>
+                    
+
+                    <small id="detailReviews">
+                    
+                    </small>
+
+                </div>
+
+
+
+                <!-- RECIPE STATS -->
+
+                <div class="recipe-stats">
+
+
+                    <div>
+
+                        <span>
+                            ⏱️
+                        </span>
+
+                        <strong id="detailTime">
+                            
+                        </strong>
+
+                        <small>
+                            Cooking Time
+                        </small>
+
+                    </div>
+
+
+
+                    <div>
+
+                        <span>
+                            👨‍🍳
+                        </span>
+
+                        <strong id="detailDifficulty">
+                            
+                        </strong>
+
+                        <small>
+                            Difficulty
+                        </small>
+
+                    </div>
+
+
+
+                    <div>
+
+                        <span>
+                            🍽️
+                        </span>
+
+                        <strong id="detailServings">
+                            
+                        </strong>
+
+                        <small>
+                            Servings
+                        </small>
+
+                    </div>
+
+
+                </div>
+
+
+
+                <!-- FAVORITE BUTTON -->
+
+                <button
+                    class="favorite-button"
+                    type="button"
+                    onclick="addToFavorites()">
+
+                    ❤️
+
+                    <span>
+                        Add to Favorites
+                    </span>
+
+                </button>
+
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             RECIPE CONTENT
+        ================================================== -->
+
+        <section class="recipe-content">
+
+
+            <!-- ================= INGREDIENTS ================= -->
+
+            <div class="ingredients-card">
+
+
+                <div class="content-heading">
+
+                    <span>
+                        WHAT YOU NEED
+                    </span>
+
+                    <h2>
+                        Ingredients 🥘
+                    </h2>
+
+                </div>
+
+
+
+                <ul class="ingredients-list" id="detailIngredients">
+
+
+                </ul>
+
+            </div>
+
+
+
+            <!-- ================= AI INSIGHT ================= -->
+
+            <div class="ai-recipe-card">
+
+
+                <div class="ai-recipe-heading">
+
+                    <div class="ai-icon">
+                        ✨
+                    </div>
+
+                    <div>
+
+                        <span>
+                            AI RECIPE INSIGHT
+                        </span>
+
+                        <h2>
+                            Why you might love this
+                        </h2>
+
+                    </div>
+
+                </div>
+
+
+                <p id="detailAi">
+
+                </p>
+
+
+                <div class="ai-tags" id="detailTags">
+
+
+                </div>
+
+            </div>
+
+
+
+            <!-- ================= INSTRUCTIONS ================= -->
+
+            <div class="instructions-card">
+
+
+                <div class="content-heading">
+
+                    <span>
+                        LET'S COOK
+                    </span>
+
+                    <h2>
+                        Cooking Instructions 👩‍🍳
+                    </h2>
+
+                </div>
+
+
+
+                <div class="steps" id="detailSteps">
+                </div>
+
+
+        </section>
+
+
+
+    </main>
+
+
+
+    <!-- =================================================
+         BOTTOM NAVIGATION
+    ================================================== -->
+
+    <section class="page-navigation">
+
+        <h2>
+            Continue Exploring 🍽️
+        </h2>
+
+        <p>
+            Discover more recipes, save your favorites
+            and personalize your cooking experience.
+        </p>
+
+
+        <div class="navigation-buttons">
+
+
+            <a
+                href="index.html"
+                class="nav-button">
+
+                🏠
+
+                <span>
+                    Home
+                </span>
+
+            </a>
+
+
+            <a
+                href="recipes.html"
+                class="nav-button">
+
+                🍽️
+
+                <span>
+                    Recipes
+                </span>
+
+            </a>
+
+
+            <a
+                href="favourites.html"
+                class="nav-button">
+
+                ❤️
+
+                <span>
+                    Favorites
+                </span>
+
+            </a>
+
+
+            <a
+                href="profile.html"
+                class="nav-button">
+
+                👤
+
+                <span>
+                    Profile
+                </span>
+
+            </a>
+
+
+            <a
+                href="login.html"
+                class="nav-button">
+
+                🔐
+
+                <span>
+                    Login
+                </span>
+
+            </a>
+
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer>
+
+        <div class="footer-logo">
+            🍴 Recipe Finder
+        </div>
+
+        <p>
+            Discover. Cook. Enjoy.
+        </p>
+
+
+        <div class="footer-bottom">
+
+            © 2026 Recipe Finder.
+            Made with ❤️ for food lovers.
+
+        </div>
+
+    </footer>
+
+
+
+    <script src="app.js"></script>
+
+</body>
+
+</html>

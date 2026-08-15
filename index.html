@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <title>Recipe Finder | Discover Delicious Food</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- ================= NAVBAR ================= -->
+
+    <header class="navbar">
+
+        <div class="logo">
+            🍴 <span>Recipe Finder</span>
+        </div>
+
+        <nav>
+            <a href="index.html" class="active">Home</a>
+            <a href="recipes.html">Recipes</a>
+            <a href="favourites.html">❤️ Favorites</a>
+            <a href="profile.html">Profile</a>
+            <a href="login.html" class="login-btn">
+                Login
+            </a>
+        </nav>
+
+    </header>
+
+
+    <!-- ================= HERO ================= -->
+
+    <main>
+
+        <section class="hero">
+
+            <div class="hero-overlay"></div>
+
+            <div class="hero-content">
+
+                <span class="hero-badge">
+                    ✨ AI-Powered Recipe Discovery
+                </span>
+
+                <h1>
+                    What are you
+                    <span>craving today?</span>
+                </h1>
+
+                <p>
+                    Discover delicious recipes, get smart food
+                    suggestions and turn everyday ingredients
+                    into something amazing.
+                </p>
+
+
+                <!-- SEARCH -->
+
+                <div class="search-box">
+
+                    <span class="search-icon">🔍</span>
+
+                    <input
+                        type="text"
+                        id="homeSearch"
+                        placeholder="Search for biryani, pasta, cake..."
+                    >
+
+                    <button onclick="searchFromHome()">
+                        Search
+                    </button>
+
+                </div>
+
+
+                <div class="quick-search">
+
+                    <span>Popular:</span>
+
+                    <button onclick="searchCategory('Indian')">
+                        Biryani
+                    </button>
+
+                    <button onclick="searchCategory('Italian')">
+                        Pizza
+                    </button>
+
+                    <button onclick="searchCategory('Dessert')">
+                        Cake
+                    </button>
+
+                    <button onclick="searchCategory('Breakfast')">
+                        Pancakes
+                    </button>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= CATEGORIES ================= -->
+
+        <section class="categories">
+
+            <div class="section-heading">
+
+                <div>
+                    <span class="section-label">
+                        EXPLORE
+                    </span>
+
+                    <h2>
+                        What are you in the mood for?
+                    </h2>
+                </div>
+
+                <a href="recipes.html">
+                    View all →
+                </a>
+
+            </div>
+
+
+            <div class="category-container">
+
+                <button
+                    class="category-card indian"
+                    onclick="searchCategory('Indian')">
+
+                    <span class="category-icon">
+                        🍛
+                    </span>
+
+                    <strong>Indian</strong>
+
+                    <small>
+                        Spicy & flavorful
+                    </small>
+
+                </button>
+
+
+                <button
+                    class="category-card italian"
+                    onclick="searchCategory('Italian')">
+
+                    <span class="category-icon">
+                        🍝
+                    </span>
+
+                    <strong>Italian</strong>
+
+                    <small>
+                        Classic favorites
+                    </small>
+
+                </button>
+
+
+                <button
+                    class="category-card dessert"
+                    onclick="searchCategory('Dessert')">
+
+                    <span class="category-icon">
+                        🍰
+                    </span>
+
+                    <strong>Desserts</strong>
+
+                    <small>
+                        Sweet treats
+                    </small>
+
+                </button>
+
+
+                <button
+                    class="category-card breakfast"
+                    onclick="searchCategory('Breakfast')">
+
+                    <span class="category-icon">
+                        🍳
+                    </span>
+
+                    <strong>Breakfast</strong>
+
+                    <small>
+                        Start your day
+                    </small>
+
+                </button>
+
+
+                <button
+                    class="category-card healthy">
+
+                    <span class="category-icon">
+                        🥗
+                    </span>
+
+                    <strong>Healthy</strong>
+
+                    <small>
+                        Fresh & nutritious
+                    </small>
+
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= AI INSIGHTS ================= -->
+
+        <section class="ai-section">
+
+            <div class="ai-card">
+
+                <div class="ai-icon">
+                    ✨
+                </div>
+
+                <div class="ai-content">
+
+                    <span class="ai-label">
+                        AI RECIPE INSIGHTS
+                    </span>
+
+                    <h2>
+                        Not sure what to cook?
+                    </h2>
+
+                    <p>
+                        Tell us what ingredients you have,
+                        and our AI can suggest recipes that
+                        match your ingredients and preferences.
+                    </p>
+
+                    <div class="ai-input">
+
+                        <input
+                            type="text"
+                            id="ingredientInput"
+                            placeholder="e.g. chicken, rice, tomato..."
+                        >
+
+                        <button 
+                        type="button"
+                        id="aiInsightbutton"
+                        onclick="getAIInsight()">
+                        
+                            ✨ Get  AI insight
+                        </button>
+
+                    </div>
+
+                    <div
+                        id="aiResult"
+                        class="ai-result">
+                </div>
+                <div
+                    id="aiinsight"
+                    class="ai-insight">
+                </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= POPULAR RECIPES ================= -->
+
+        <section class="featured">
+
+            <div class="section-heading">
+
+                <div>
+
+                    <span class="section-label">
+                        TRENDING NOW
+                    </span>
+
+                    <h2>
+                        Popular Recipes 🔥
+                    </h2>
+
+                </div>
+
+                <a href="recipes.html">
+                    See all recipes →
+                </a>
+
+            </div>
+
+
+            <div
+                id="featuredRecipes"
+                class="recipe-grid">
+            </div>
+
+        </section>
+
+
+        <!-- ================= WHY RECIPE FINDER ================= -->
+
+        <section class="features">
+
+            <div class="section-heading centered">
+
+                <span class="section-label">
+                    WHY RECIPE FINDER?
+                </span>
+
+                <h2>
+                    Everything you need to cook better
+                </h2>
+
+            </div>
+
+
+            <div class="feature-grid">
+
+                <div class="feature-card">
+
+                    <div class="feature-icon">
+                        🔍
+                    </div>
+
+                    <h3>
+                        Find Recipes Fast
+                    </h3>
+
+                    <p>
+                        Search through recipes quickly
+                        based on what you're craving.
+                    </p>
+
+                </div>
+
+
+                <div class="feature-card">
+
+                    <div class="feature-icon">
+                        ✨
+                    </div>
+
+                    <h3>
+                        AI-Powered Ideas
+                    </h3>
+
+                    <p>
+                        Get smart recipe suggestions
+                        based on your ingredients.
+                    </p>
+
+                </div>
+
+
+                <div class="feature-card">
+
+                    <div class="feature-icon">
+                        ❤️
+                    </div>
+
+                    <h3>
+                        Save Favorites
+                    </h3>
+
+                    <p>
+                        Save recipes you love and
+                        easily find them later.
+                    </p>
+
+                </div>
+
+
+                <div class="feature-card">
+
+                    <div class="feature-icon">
+                        👩‍🍳
+                    </div>
+
+                    <h3>
+                        Easy Instructions
+                    </h3>
+
+                    <p>
+                        Follow simple ingredients and
+                        step-by-step cooking instructions.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer>
+
+        <div class="footer-content">
+
+            <div>
+
+                <div class="logo">
+                    🍴 Recipe Finder
+                </div>
+
+                <p>
+                    Discover. Cook. Enjoy.
+                </p>
+
+            </div>
+
+
+            <div class="footer-links">
+
+                <a href="index.html">
+                    Home
+                </a>
+
+                <a href="recipes.html">
+                    Recipes
+                </a>
+
+                <a href="favourites.html">
+                    Favorites
+                </a>
+
+                <a href="profile.html">
+                    Profile
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <div class="footer-bottom">
+
+            <p>
+                © 2026 Recipe Finder.
+                Made with ❤️ for food lovers.
+            </p>
+
+        </div>
+
+    </footer>
+    <script type="module">
+  // Import the functions you need from the SDKs you need
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/12.17.1/firebase-app.js";
+  // TODO: Add SDKs for Firebase products that you want to use
+  // https://firebase.google.com/docs/web/setup#available-libraries
+
+  // Your web app's Firebase configuration
+  const firebaseConfig = {
+    apiKey: "AIzaSyDHO5qqxKWPbVSqjqt47RIsP3eSwwR7sh8",
+    authDomain: "recipe-finder-f9137.firebaseapp.com",
+    projectId: "recipe-finder-f9137",
+    storageBucket: "recipe-finder-f9137.firebasestorage.app",
+    messagingSenderId: "832900051808",
+    appId: "1:832900051808:web:69bdfbfd180f0fda5e6405"
+  };
+
+  // Initialize Firebase
+  const app = initializeApp(firebaseConfig);
+  window.firebaseApp = app;
+
+console.log("🔥 Firebase connected successfully!");
+
+</script>
+
+
+
+
+    <script src="app.js"></script>
+   
+
+
+</body>
+
+</html>

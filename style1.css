@@ -1,0 +1,712 @@
+/* =====================================================
+   GLOBAL
+===================================================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #fffaf7;
+    color: #292929;
+    line-height: 1.6;
+}
+
+main {
+    min-height: 100vh;
+}
+
+
+/* =====================================================
+   RECIPE HERO
+===================================================== */
+ .view-recipe-btn{
+    display: inline-block;
+    padding: 12px 24px;
+    background: linear-gradient(135deg, #ff7a59, #ff4d4d);
+    color: white;
+    text-decoration: none;
+    border-radius: 12px;
+    font-weight: 700;
+    font-size: 14px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    border: none;
+}
+
+.view-recipe-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(255, 100, 80, 0.3);
+}
+
+.recipes-hero {
+    min-height: 430px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+
+    padding: 70px 20px;
+
+    background:
+        linear-gradient(
+            rgba(255, 245, 239, 0.88),
+            rgba(255, 250, 247, 0.96)
+        ),
+        url("https://images.unsplash.com/photo-1498837167922-ddd27525d352?auto=format&fit=crop&w=1600&q=80");
+
+    background-size: cover;
+    background-position: center;
+}
+
+
+.recipes-hero-content {
+    max-width: 850px;
+}
+
+
+.section-label {
+    display: inline-block;
+
+    font-size: 13px;
+    font-weight: 700;
+
+    letter-spacing: 2px;
+
+    color: #f26b4f;
+
+    margin-bottom: 12px;
+}
+
+
+.recipes-hero h1 {
+    font-size: clamp(42px, 6vw, 72px);
+
+    line-height: 1.05;
+
+    margin-bottom: 20px;
+
+    color: #243447;
+}
+
+
+.recipes-hero h1 span {
+    color: #f26b4f;
+}
+
+
+.recipes-hero p {
+    max-width: 650px;
+
+    margin: 0 auto 30px;
+
+    font-size: 17px;
+
+    color: #626262;
+}
+
+
+/* =====================================================
+   SEARCH BOX
+===================================================== */
+
+.recipe-search {
+    max-width: 650px;
+
+    margin: auto;
+
+    display: flex;
+    align-items: center;
+
+    background: white;
+
+    border-radius: 18px;
+
+    padding: 8px;
+
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.10);
+}
+
+
+.recipe-search span {
+    font-size: 22px;
+
+    padding: 0 10px;
+}
+
+
+.recipe-search input {
+    flex: 1;
+
+    border: none;
+    outline: none;
+
+    font-size: 16px;
+
+    padding: 15px 10px;
+
+    background: transparent;
+}
+
+
+.recipe-search button {
+    border: none;
+
+    background: #f26b4f;
+
+    color: white;
+
+    padding: 14px 25px;
+
+    border-radius: 13px;
+
+    font-size: 15px;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+
+.recipe-search button:hover {
+    background: #e45338;
+
+    transform: translateY(-2px);
+}
+
+
+/* =====================================================
+   RECIPE EXPLORER
+===================================================== */
+
+.recipe-explorer {
+    max-width: 1200px;
+
+    margin: auto;
+
+    padding: 70px 25px;
+}
+
+
+.recipe-heading {
+    margin-bottom: 25px;
+}
+
+
+.recipe-heading h2 {
+    font-size: 32px;
+
+    color: #243447;
+}
+
+
+/* =====================================================
+   FILTER BUTTONS
+===================================================== */
+
+.filter-buttons {
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 12px;
+
+    margin-bottom: 50px;
+}
+
+
+.filter-buttons button {
+    border: 1px solid #eee;
+
+    background: white;
+
+    color: #555;
+
+    padding: 11px 20px;
+
+    border-radius: 30px;
+
+    font-size: 14px;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+
+.filter-buttons button:hover {
+    background: #fff0eb;
+
+    color: #f26b4f;
+
+    transform: translateY(-2px);
+}
+
+
+.filter-buttons .filter-active {
+    background: #f26b4f;
+
+    color: white;
+
+    border-color: #f26b4f;
+}
+
+
+/* =====================================================
+   RESULTS HEADER
+===================================================== */
+
+.results-top {
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    margin-bottom: 25px;
+}
+
+
+.results-top h2 {
+    color: #243447;
+
+    font-size: 28px;
+}
+
+
+.results-top p {
+    color: #777;
+
+    font-size: 14px;
+}
+
+
+#recipeCount {
+    background: #fff0eb;
+
+    color: #f26b4f;
+
+    padding: 8px 15px;
+
+    border-radius: 20px;
+
+    font-size: 13px;
+
+    font-weight: 600;
+}
+
+
+/* =====================================================
+   RECIPE GRID
+===================================================== */
+
+.recipe-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(auto-fit, minmax(250px, 1fr));
+
+    gap: 25px;
+}
+
+
+/* =====================================================
+   RECIPE CARD
+===================================================== */
+
+.recipe-card {
+    background: white;
+
+    border-radius: 20px;
+
+    overflow: hidden;
+
+    box-shadow:
+        0 8px 25px rgba(0, 0, 0, 0.08);
+
+    transition: 0.35s;
+}
+
+
+.recipe-card:hover {
+    transform: translateY(-7px);
+
+    box-shadow:
+        0 15px 35px rgba(0, 0, 0, 0.12);
+}
+
+
+.recipe-card img {
+    width: 100%;
+
+    height: 200px;
+
+    object-fit: cover;
+}
+
+
+.recipe-card-content {
+    padding: 20px;
+}
+
+
+.recipe-card h3 {
+    font-size: 20px;
+
+    color: #243447;
+
+    margin-bottom: 8px;
+}
+
+
+.recipe-card p {
+    color: #777;
+
+    font-size: 14px;
+}
+
+
+/* =====================================================
+   BOTTOM NAVIGATION
+===================================================== */
+
+.page-navigation {
+    max-width: 1100px;
+
+    margin: 40px auto 70px;
+
+    padding: 55px 25px;
+
+    text-align: center;
+
+    background:
+        linear-gradient(
+            135deg,
+            #fff1eb,
+            #fff9f5
+        );
+
+    border-radius: 30px;
+
+    border: 1px solid #ffe2d8;
+
+    box-shadow:
+        0 12px 35px rgba(0, 0, 0, 0.06);
+}
+
+
+.page-navigation h2 {
+    font-size: 30px;
+
+    color: #243447;
+
+    margin-bottom: 8px;
+}
+
+
+.page-navigation > p {
+    color: #777;
+
+    max-width: 600px;
+
+    margin: 0 auto 30px;
+
+    font-size: 15px;
+}
+
+
+/* =====================================================
+   NAVIGATION BUTTON CONTAINER
+===================================================== */
+
+.navigation-buttons {
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    flex-wrap: wrap;
+
+    gap: 15px;
+}
+
+
+/* =====================================================
+   NAVIGATION LINKS AS BUTTONS
+===================================================== */
+
+.navigation-buttons .nav-button {
+
+    /* Remove default link styling */
+    text-decoration: none;
+
+    /* Make link behave like a button */
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 9px;
+
+    min-width: 125px;
+
+    padding: 13px 20px;
+
+    border-radius: 14px;
+
+    background: white;
+
+    color: #39424e;
+
+    border: 1px solid #eaded9;
+
+    font-size: 15px;
+
+    font-weight: 600;
+
+    box-shadow:
+        0 5px 15px rgba(0, 0, 0, 0.06);
+
+    transition:
+        transform 0.25s ease,
+        background 0.25s ease,
+        color 0.25s ease,
+        box-shadow 0.25s ease;
+
+    cursor: pointer;
+}
+
+
+/* ICON */
+
+.navigation-buttons .nav-button:first-letter {
+    font-size: 19px;
+}
+
+
+/* HOVER */
+
+.navigation-buttons .nav-button:hover {
+
+    background: #f26b4f;
+
+    color: white;
+
+    border-color: #f26b4f;
+
+    transform: translateY(-4px);
+
+    box-shadow:
+        0 9px 20px rgba(242, 107, 79, 0.25);
+}
+
+
+/* CURRENT PAGE */
+
+.navigation-buttons .active-button {
+
+    background: #f26b4f;
+
+    color: white;
+
+    border-color: #f26b4f;
+
+    box-shadow:
+        0 7px 18px rgba(242, 107, 79, 0.25);
+}
+
+
+/* CURRENT PAGE HOVER */
+
+.navigation-buttons .active-button:hover {
+
+    background: #e45338;
+
+    border-color: #e45338;
+
+    color: white;
+}
+
+
+/* =====================================================
+   FOOTER
+===================================================== */
+
+footer {
+    background: #243447;
+
+    color: white;
+
+    padding-top: 45px;
+}
+
+
+.footer-content {
+    max-width: 1100px;
+
+    margin: auto;
+
+    padding: 0 25px 35px;
+
+    text-align: center;
+}
+
+
+.footer-logo {
+    font-size: 24px;
+
+    font-weight: 700;
+
+    margin-bottom: 8px;
+}
+
+
+.footer-content p {
+    color: #c9ced4;
+
+    font-size: 14px;
+}
+
+
+.footer-bottom {
+    border-top: 1px solid rgba(255,255,255,0.1);
+
+    text-align: center;
+
+    padding: 20px;
+
+    color: #adb5bd;
+
+    font-size: 13px;
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width: 700px) {
+
+    .recipes-hero {
+        min-height: 400px;
+
+        padding: 50px 18px;
+    }
+
+
+    .recipes-hero h1 {
+        font-size: 42px;
+    }
+
+
+    .recipe-search {
+        flex-direction: column;
+
+        padding: 10px;
+    }
+
+
+    .recipe-search span {
+        display: none;
+    }
+
+
+    .recipe-search input {
+        width: 100%;
+
+        text-align: center;
+    }
+
+
+    .recipe-search button {
+        width: 100%;
+    }
+
+
+    .recipe-heading h2 {
+        font-size: 26px;
+    }
+
+
+    .results-top {
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        gap: 12px;
+    }
+
+
+    .page-navigation {
+        margin: 30px 15px 50px;
+
+        padding: 40px 18px;
+
+        border-radius: 24px;
+    }
+
+
+    .page-navigation h2 {
+        font-size: 25px;
+    }
+
+
+    .navigation-buttons {
+        display: grid;
+
+        grid-template-columns:
+            repeat(2, 1fr);
+
+        gap: 12px;
+    }
+
+
+    .navigation-buttons .nav-button {
+        width: 100%;
+
+        min-width: 0;
+
+        padding: 13px 10px;
+    }
+
+
+    /* Login button gets full width */
+
+    .navigation-buttons .nav-button:last-child {
+        grid-column: 1 / -1;
+    }
+
+}
+
+                    
+/* ================= VIEW RECIPE BUTTON ================= */
+
+.recipe-card .view-recipe {
+    display: inline-block !important;
+    padding: 12px 24px !important;
+    background: linear-gradient(135deg, #ff7a59, #ff4d4d) !important;
+    color: white !important;
+    text-decoration: none !important;
+    border-radius: 12px !important;
+    font-weight: 700 !important;
+    font-size: 14px !important;
+    cursor: pointer !important;
+    border: none !important;
+    transition: all 0.3s ease !important;
+}
+
+.recipe-card .view-recipe:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(255, 100, 80, 0.3);
+}

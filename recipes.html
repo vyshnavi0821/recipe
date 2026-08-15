@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <title>Explore Recipes | Recipe Finder</title>
+
+    <link rel="stylesheet"
+        href="style1.css">
+
+</head>
+
+
+<body>
+
+
+    <!-- ================= MAIN ================= -->
+
+    <main>
+
+
+        <!-- ================= PAGE HERO ================= -->
+
+        <section class="recipes-hero">
+
+            <div class="recipes-hero-content">
+
+                <span class="section-label">
+                    DISCOVER SOMETHING DELICIOUS
+                </span>
+
+                <h1>
+                    Explore Our
+                    <span>Recipes 🍽️</span>
+                </h1>
+
+                <p>
+                    From quick breakfasts to delicious
+                    dinners and irresistible desserts,
+                    find something you'll love.
+                </p>
+
+
+                <!-- SEARCH -->
+
+                <div class="recipe-search">
+
+                    <span>
+                        🔍
+                    </span>
+
+                    <input
+                        type="text"
+                        id="recipeSearch"
+                        placeholder="Search recipes..."
+                        oninput="displayRecipes()">
+
+                    <button
+                        onclick="displayRecipes()">
+
+                        Search
+
+                </button>
+                    
+                    
+<div id="recipeContainer"
+     class="recipe-grid recipes-page-grid">
+</div>
+                
+
+            </div>
+
+        </section>
+
+
+
+        <!-- ================= RECIPE EXPLORER ================= -->
+
+        <section class="recipe-explorer">
+
+
+            <!-- HEADING -->
+
+            <div class="recipe-heading">
+
+                <div>
+
+                    <span class="section-label">
+                        BROWSE
+                    </span>
+
+                    <h2>
+                        Find what you're craving
+                    </h2>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- ================= FILTERS ================= -->
+
+            <div class="filter-buttons">
+
+
+                <button
+                    class="filter-active"
+                    onclick="filterRecipes('All')">
+
+                    🍽️ All
+
+                </button>
+
+
+                <button
+                    onclick="filterRecipes('Indian')">
+
+                    🇮🇳 Indian
+
+                </button>
+
+
+                <button
+                    onclick="filterRecipes('Italian')">
+
+                    🍝 Italian
+
+                </button>
+
+
+                <button
+                    onclick="filterRecipes('Dessert')">
+
+                    🍰 Desserts
+
+                </button>
+
+
+                <button
+                    onclick="filterRecipes('Breakfast')">
+
+                    🍳 Breakfast
+
+                </button>
+
+
+                <button
+                    onclick="filterRecipes('Healthy')">
+
+                    🥗 Healthy
+
+                </button>
+
+
+            </div>
+
+
+
+            <!-- ================= RESULTS ================= -->
+
+            <div class="results-top">
+
+                <div>
+
+                    <h2>
+                        Popular Recipes 🔥
+                    </h2>
+
+                    <p>
+                        Delicious recipes selected
+                        for you
+                    </p>
+
+                </div>
+
+
+                <span id="recipeCount">
+                    Recipes
+                </span>
+
+            </div>
+
+
+
+            <!-- JAVASCRIPT RECIPE CARDS -->
+
+            <div
+                id="recipeContainer"
+                class="recipe-grid recipes-page-grid">
+
+            </div>
+
+
+        </section>
+
+
+
+        <!-- =================================================
+             BOTTOM NAVIGATION
+        ================================================== -->
+
+        <section class="page-navigation">
+
+            <h2>
+                Continue Exploring 🍽️
+            </h2>
+
+            <p>
+                Discover recipes, save your favorites
+                and personalize your cooking experience.
+            </p>
+
+
+            <div class="navigation-buttons">
+
+
+                <a
+                    href="index.html"
+                    class="nav-button">
+
+                    🏠
+
+                    <span>
+                        Home
+                    </span>
+
+                </a>
+
+
+                <a
+                    href="recipes.html"
+                    class="nav-button active-button">
+
+                    🍽️
+
+                    <span>
+                        Recipes
+                    </span>
+
+                </a>
+
+
+                <a
+                    href="favourites.html"
+                    class="nav-button">
+
+                    ❤️
+
+                    <span>
+                        Favorites
+                    </span>
+
+                </a>
+
+
+                <a
+                    href="profile.html"
+                    class="nav-button">
+
+                    👤
+
+                    <span>
+                        Profile
+                    </span>
+
+                </a>
+
+
+                <a
+                    href="login.html"
+                    class="nav-button">
+
+                    🔐
+
+                    <span>
+                        Login
+                    </span>
+
+                </a>
+
+
+            </div>
+
+        </section>
+
+
+    </main>
+
+
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer>
+
+
+        <div class="footer-content">
+
+
+            <div>
+
+                <div class="footer-logo">
+                    🍴 Recipe Finder
+                </div>
+
+                <p>
+                    Discover. Cook. Enjoy.
+                </p>
+
+            </div>
+
+
+        </div>
+
+
+        <div class="footer-bottom">
+
+            <p>
+                © 2026 Recipe Finder.
+                Made with ❤️ for food lovers.
+            </p>
+
+        </div>
+
+
+    </footer>
+
+
+
+    <script src="app.js"></script>
+
+
+</body>
+
+</html>
